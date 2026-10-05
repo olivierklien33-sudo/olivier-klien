@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Olivier Klien - Solutions de financement</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f7fa;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #123b63;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 28px;
+    }
+
+    header p {
+      margin-top: 5px;
+    }
+
+    nav {
+      background: white;
+      padding: 12px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    nav a {
+      color: #123b63;
+      text-decoration: none;
+      margin: 0 8px;
+      font-weight: bold;
+    }
+
+    .hero {
+      background: #e8f1f8;
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: 32px;
+      color: #123b63;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: auto;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 25px;
+      background: #123b63;
+      color: white;
+      padding: 14px 25px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .section {
+      max-width: 900px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    .section h2 {
+      text-align: center;
+      color: #123b63;
+      margin-bottom: 25px;
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      width: 260px;
+      text-align: center;
+    }
+
+    .card h3 {
+      color: #123b63;
+      margin-bottom: 10px;
+    }
+
+    form {
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      max-width: 600px;
+      margin: auto;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 6px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 20px;
+      padding: 14px;
+      background: #123b63;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    footer {
+      background: #123b63;
+      color: white;
+      text-align: center;
+      padding: 25px 15px;
+      margin-top: 30px;
+    }
+
+    .notice {
+      background: #fff4d6;
+      padding: 15px;
+      margin-top: 20px;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Olivier Klien</h1>
+  <p>Solutions de financement</p>
+</header>
+
+<nav>
+  <a href="#accueil">Accueil</a>
+  <a href="#offres">Nos offres</a>
+  <a href="#demande">Demande</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<section class="hero" id="accueil">
+  <h2>Bienvenue chez Olivier Klien</h2>
+  <p>
+    Découvrez nos solutions de financement et envoyez votre demande
+    pour étude selon les conditions applicables.
+  </p>
+
+  <a class="button" href="#demande">Faire une demande</a>
+</section>
+
+<section class="section" id="offres">
+  <h2>Nos solutions</h2>
+
+  <div class="cards">
+
+    <div class="card">
+      <h3>Financement personnel</h3>
+      <p>
+        Une solution destinée aux projets personnels,
+        sous réserve d'étude et d'éligibilité.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Financement de projet</h3>
+      <p>
+        Présentez votre projet et les informations nécessaires
+        pour permettre son évaluation.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Accompagnement</h3>
+      <p>
+        Nous vous expliquons les conditions, les coûts
+        et les modalités applicables avant toute décision.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section class="section" id="demande">
+  <h2>Demande de financement</h2>
+
+  <form action="mailto:olivierklien33@gmail.com"
+        method="post"
+        enctype="text/plain">
+
+    <label>Nom complet</label>
+    <input type="text" name="Nom" required>
+
+    <label>Adresse e-mail</label>
+    <input type="email" name="Email" required>
+
+    <label>Montant souhaité</label>
+    <input type="number" name="Montant" min="1" required>
+
+    <label>Objet du financement</label>
+    <textarea name="Objet" rows="4" required></textarea>
+
+    <button type="submit">Envoyer ma demande</button>
+
+  </form>
+
+  <div class="notice">
+    Une demande de financement ne constitue pas une approbation.
+    Toute décision doit être prise conformément aux conditions
+    applicables et à la réglementation en vigueur.
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <h2>Contact</h2>
+
+  <p style="text-align:center;">
+    E-mail :
+    <strong>olivierklien33@gmail.com</strong>
+  </p>
+</section>
+
+<footer>
+  <p>© 2026 Olivier Klien - Tous droits réservés.</p>
+  <p>Les conditions et autorisations applicables doivent être respectées.</p>
+</footer>
+
+</body>
+</html>
