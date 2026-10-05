@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Olivier Klien - Solutions de financement</title>
 
   <style>
@@ -14,24 +15,25 @@
 
     body {
       font-family: Arial, sans-serif;
-      background: #f5f7fa;
+      background: #f4f7fb;
       color: #222;
       line-height: 1.6;
     }
 
     header {
-      background: #123b63;
+      background: #0b2d5c;
       color: white;
-      padding: 20px;
+      padding: 22px 15px;
       text-align: center;
     }
 
     header h1 {
       font-size: 28px;
+      margin-bottom: 8px;
     }
 
     header p {
-      margin-top: 5px;
+      font-size: 15px;
     }
 
     nav {
@@ -42,122 +44,163 @@
     }
 
     nav a {
-      color: #123b63;
+      color: #0b2d5c;
       text-decoration: none;
-      margin: 0 8px;
+      margin: 0 10px;
       font-weight: bold;
     }
 
     .hero {
-      background: #e8f1f8;
-      padding: 50px 20px;
+      background: linear-gradient(135deg, #0b2d5c, #1768aa);
+      color: white;
       text-align: center;
+      padding: 60px 20px;
     }
 
     .hero h2 {
       font-size: 32px;
-      color: #123b63;
       margin-bottom: 15px;
     }
 
     .hero p {
-      max-width: 650px;
+      max-width: 700px;
       margin: auto;
+      font-size: 17px;
     }
 
     .button {
       display: inline-block;
       margin-top: 25px;
-      background: #123b63;
-      color: white;
       padding: 14px 25px;
-      border-radius: 6px;
+      background: #20b26b;
+      color: white;
       text-decoration: none;
+      border-radius: 8px;
       font-weight: bold;
     }
 
-    .section {
-      max-width: 900px;
+    section {
+      max-width: 1000px;
       margin: auto;
-      padding: 40px 20px;
+      padding: 45px 20px;
     }
 
-    .section h2 {
+    section h2 {
       text-align: center;
-      color: #123b63;
+      color: #0b2d5c;
       margin-bottom: 25px;
     }
 
     .cards {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
     }
 
     .card {
       background: white;
       padding: 25px;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-      width: 260px;
+      border-radius: 12px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
       text-align: center;
     }
 
     .card h3 {
-      color: #123b63;
+      color: #0b2d5c;
       margin-bottom: 10px;
     }
 
-    form {
+    .form-container {
       background: white;
-      padding: 25px;
-      border-radius: 10px;
-      max-width: 600px;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 3px 15px rgba(0,0,0,0.09);
+      max-width: 700px;
       margin: auto;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
     }
 
     label {
       display: block;
       margin-top: 15px;
+      margin-bottom: 6px;
       font-weight: bold;
     }
 
-    input, select, textarea {
+    input,
+    select {
       width: 100%;
-      padding: 12px;
-      margin-top: 6px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
+      padding: 13px;
+      border: 1px solid #ccd4df;
+      border-radius: 7px;
+      font-size: 15px;
     }
 
     button {
       width: 100%;
-      margin-top: 20px;
+      margin-top: 25px;
       padding: 14px;
-      background: #123b63;
+      background: #0b2d5c;
       color: white;
       border: none;
-      border-radius: 6px;
+      border-radius: 8px;
       font-size: 16px;
       font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #1768aa;
+    }
+
+    #resultat {
+      margin-top: 20px;
+      padding: 15px;
+      background: #eef6ff;
+      border-radius: 8px;
+      display: none;
+    }
+
+    .contact {
+      text-align: center;
+      background: #eaf1f8;
+      border-radius: 12px;
+    }
+
+    .contact a {
+      color: #0b2d5c;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .warning {
+      background: #fff8e1;
+      border-left: 5px solid #e0a800;
+      padding: 18px;
+      margin-top: 20px;
+      border-radius: 6px;
     }
 
     footer {
-      background: #123b63;
+      background: #0b2d5c;
       color: white;
       text-align: center;
       padding: 25px 15px;
       margin-top: 30px;
     }
 
-    .notice {
-      background: #fff4d6;
-      padding: 15px;
-      margin-top: 20px;
-      border-radius: 6px;
-      font-size: 14px;
+    footer a {
+      color: white;
+    }
+
+    @media (max-width: 600px) {
+      .hero h2 {
+        font-size: 25px;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 5px;
+      }
     }
   </style>
 </head>
@@ -171,96 +214,261 @@
 
 <nav>
   <a href="#accueil">Accueil</a>
-  <a href="#offres">Nos offres</a>
-  <a href="#demande">Demande</a>
+  <a href="#financement">Financement</a>
+  <a href="#simulation">Simulation</a>
   <a href="#contact">Contact</a>
 </nav>
 
 <section class="hero" id="accueil">
-  <h2>Bienvenue chez Olivier Klien</h2>
+  <h2>Votre projet mérite une solution de financement</h2>
+
   <p>
-    Découvrez nos solutions de financement et envoyez votre demande
-    pour étude selon les conditions applicables.
+    Découvrez nos possibilités de financement et effectuez une
+    simulation indicative selon le montant et la durée souhaités.
   </p>
 
-  <a class="button" href="#demande">Faire une demande</a>
+  <a class="button" href="#simulation">
+    Faire une simulation
+  </a>
 </section>
 
-<section class="section" id="offres">
-  <h2>Nos solutions</h2>
+<section id="financement">
+
+  <h2>Nos possibilités de financement</h2>
 
   <div class="cards">
 
     <div class="card">
-      <h3>Financement personnel</h3>
+      <h3>Montant</h3>
       <p>
-        Une solution destinée aux projets personnels,
-        sous réserve d'étude et d'éligibilité.
+        De <strong>3 000 €</strong> à
+        <strong>500 000 €</strong>,
+        sous réserve d'éligibilité.
       </p>
     </div>
 
     <div class="card">
-      <h3>Financement de projet</h3>
+      <h3>Durée</h3>
       <p>
-        Présentez votre projet et les informations nécessaires
-        pour permettre son évaluation.
+        Durée indicative de remboursement
+        de <strong>1 à 5 ans</strong>.
       </p>
     </div>
 
     <div class="card">
-      <h3>Accompagnement</h3>
+      <h3>Âge</h3>
       <p>
-        Nous vous expliquons les conditions, les coûts
-        et les modalités applicables avant toute décision.
+        Demandes possibles de
+        <strong>20 à 70 ans</strong>,
+        sous réserve des conditions applicables.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Europe</h3>
+      <p>
+        Les demandes sont soumises aux
+        conditions légales applicables dans
+        le pays du demandeur.
       </p>
     </div>
 
   </div>
-</section>
 
-<section class="section" id="demande">
-  <h2>Demande de financement</h2>
-
-  <form action="mailto:olivierklien33@gmail.com"
-        method="post"
-        enctype="text/plain">
-
-    <label>Nom complet</label>
-    <input type="text" name="Nom" required>
-
-    <label>Adresse e-mail</label>
-    <input type="email" name="Email" required>
-
-    <label>Montant souhaité</label>
-    <input type="number" name="Montant" min="1" required>
-
-    <label>Objet du financement</label>
-    <textarea name="Objet" rows="4" required></textarea>
-
-    <button type="submit">Envoyer ma demande</button>
-
-  </form>
-
-  <div class="notice">
-    Une demande de financement ne constitue pas une approbation.
-    Toute décision doit être prise conformément aux conditions
-    applicables et à la réglementation en vigueur.
+  <div class="warning">
+    <strong>Information importante :</strong>
+    une simulation ou une demande déposée sur ce site
+    ne constitue pas une promesse d'octroi de crédit.
+    Toute décision de financement est soumise à l'éligibilité,
+    aux vérifications nécessaires et à la réglementation applicable.
   </div>
+
 </section>
 
-<section class="section" id="contact">
-  <h2>Contact</h2>
+<section id="simulation">
 
-  <p style="text-align:center;">
-    E-mail :
-    <strong>olivierklien33@gmail.com</strong>
+  <h2>Simulation indicative</h2>
+
+  <div class="form-container">
+
+    <form id="simulationForm">
+
+      <label for="montant">
+        Montant souhaité (€)
+      </label>
+
+      <input
+        type="number"
+        id="montant"
+        min="3000"
+        max="500000"
+        placeholder="Exemple : 10000"
+        required
+      >
+
+      <label for="duree">
+        Durée souhaitée
+      </label>
+
+      <select id="duree" required>
+        <option value="">Choisir une durée</option>
+        <option value="12">1 an</option>
+        <option value="24">2 ans</option>
+        <option value="36">3 ans</option>
+        <option value="48">4 ans</option>
+        <option value="60">5 ans</option>
+      </select>
+
+      <button type="submit">
+        Calculer la simulation
+      </button>
+
+    </form>
+
+    <div id="resultat"></div>
+
+  </div>
+
+</section>
+
+<section id="contact">
+
+  <h2>Nous contacter</h2>
+
+  <div class="contact">
+
+    <p>
+      Pour toute question concernant une demande de financement,
+      contactez-nous.
+    </p>
+
+    <br>
+
+    <p>
+      <strong>Email :</strong><br>
+      <a href="mailto:olivierklien33@gmail.com">
+        olivierklien33@gmail.com
+      </a>
+    </p>
+
+    <br>
+
+    <p>
+      <strong>WhatsApp :</strong><br>
+      <a href="https://wa.me/351913726077">
+        +351 913 726 077
+      </a>
+    </p>
+
+    <a
+      class="button"
+      href="https://wa.me/351913726077?text=Bonjour%20Olivier%20Klien%2C%20je%20souhaite%20obtenir%20des%20informations%20sur%20une%20demande%20de%20financement."
+    >
+      Contacter sur WhatsApp
+    </a>
+
+  </div>
+
+</section>
+
+<section>
+
+  <h2>Informations légales</h2>
+
+  <p>
+    Ce site présente des informations générales et une simulation
+    indicative. Les conditions, taux, frais éventuels, vérifications
+    et critères d'éligibilité doivent être communiqués clairement
+    avant toute conclusion d'un contrat.
   </p>
+
+  <p style="margin-top:15px;">
+    Les services de crédit peuvent être soumis à des règles
+    d'autorisation, d'enregistrement, de protection du consommateur
+    et de protection des données personnelles selon le pays concerné.
+  </p>
+
 </section>
 
 <footer>
-  <p>© 2026 Olivier Klien - Tous droits réservés.</p>
-  <p>Les conditions et autorisations applicables doivent être respectées.</p>
+
+  <p>
+    © 2026 Olivier Klien - Solutions de financement
+  </p>
+
+  <p style="margin-top:8px;">
+    Contact :
+    <a href="mailto:olivierklien33@gmail.com">
+      olivierklien33@gmail.com
+    </a>
+  </p>
+
 </footer>
+
+<script>
+
+  document.getElementById("simulationForm")
+    .addEventListener("submit", function(event) {
+
+      event.preventDefault();
+
+      const montant =
+        Number(document.getElementById("montant").value);
+
+      const duree =
+        Number(document.getElementById("duree").value);
+
+      const resultat =
+        document.getElementById("resultat");
+
+      if (montant < 3000 || montant > 500000) {
+        resultat.style.display = "block";
+
+        resultat.innerHTML =
+          "Veuillez choisir un montant compris entre 3 000 € et 500 000 €.";
+
+        return;
+      }
+
+      if (!duree) {
+        resultat.style.display = "block";
+
+        resultat.innerHTML =
+          "Veuillez sélectionner une durée.";
+
+        return;
+      }
+
+      /*
+        Cette simulation ne calcule pas un taux d'intérêt,
+        car aucun taux officiel n'a été défini.
+        Elle indique simplement le capital divisé
+        par le nombre de mois.
+      */
+
+      const mensualiteIndicative =
+        montant / duree;
+
+      resultat.style.display = "block";
+
+      resultat.innerHTML =
+        "<strong>Simulation indicative</strong><br><br>" +
+        "Montant : " +
+        montant.toLocaleString("fr-FR") +
+        " €<br>" +
+        "Durée : " +
+        (duree / 12) +
+        " an(s)<br>" +
+        "Capital mensuel indicatif hors intérêts et frais : " +
+        mensualiteIndicative.toLocaleString("fr-FR", {
+          maximumFractionDigits: 2
+        }) +
+        " €<br><br>" +
+        "Cette simulation n'est pas une offre de crédit.";
+
+    });
+
+</script>
 
 </body>
 </html>
